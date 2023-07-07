@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="main.css">
+
+    <title>Login - Money Wi$e</title>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="title container">
+        <h1 id="money-wise-title">MoneyWi$e</h1>
+    </div>
+    <div class="login-manual container">
+        <form>
+            <label for="">Login</label>
+            <p class="username-container">
+                <input class="username-field form-control" required type="text" placeholder="E-mail ou CPF"
+                    aria-label="Email ou CPF">
+                <em class="username-icon-prefix bi bi-envelope"></em>
+            </p>
+            <p class="password-container">
+                <input id="loginPassword" class="password-field form-control" required type="password"
+                    placeholder="Senha" aria-label="Senha">
+                <em class="password-icon-prefix bi bi-lock"></em>
+                <em class="password-icon-sufix bi bi-eye-slash" id="togglePassword"></em>
+            </p>
+            <div class="login-utilities-container">
+                <div class="keep-sign-in-container">
+                    <input id="keep-sign-in" class="form-check-input" type="checkbox">
+                    <label for="keep-sign-in">
+                        Permanecer conectado
+                    </label>
+                </div>
+                <div class="forget-password-container">
+                    <span class="forget-password">
+                        Esqueci minha senha
+                    </span>
+                </div>
+            </div>
+            <button class="form-button btn" type="submit">ENTRAR</button>
+        </form>
+        <div class="social-media-sign-in-container">
+            <div class="section-title-container">
+                <div class="horizontal-line-container">
+                    <hr>
+                </div>
+                <span class="section-title">Ou entre com:</span>
+                <div class="horizontal-line-container">
+                    <hr>
+                </div>
+            </div>
+            <button class="social-media-login-button btn" type="button">
+                <img class="google-logo" src="assets/images/google_logo.svg" alt="Google">
+            </button>
+        </div>
+        <div class="sign-up-container">
+            <div class="section-title-container">
+                <div class="horizontal-line-container">
+                    <hr>
+                </div>
+                <span class="section-title">Ainda não é membro?</span>
+                <div class="horizontal-line-container">
+                    <hr>
+                </div>
+            </div>
+            <button class="social-media-login-button btn" type="button">
+                Criar conta
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document
+            .querySelector('#togglePassword');
+        const password = document.querySelector('#loginPassword');
+        togglePassword.addEventListener('click', () => {
+            const type = password
+                .getAttribute('type') === 'password' ?
+                'text' : 'password';
+            password.setAttribute('type', type);
+            togglePassword.classList.toggle('bi-eye');
+        });
+    </script>
+</body>
+
+</html>
